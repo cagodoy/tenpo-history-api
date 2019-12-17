@@ -5,7 +5,19 @@ Microservice implemented in Golang that stores history information into postgres
 ## Table
 
 ```
-
+   Column   |           Type           | Collation | Nullable |      Default
+------------+--------------------------+-----------+----------+-------------------
+ id         | uuid                     |           | not null | gen_random_uuid()
+ user_id    | character varying(255)   |           | not null |
+ latitude   | character varying(255)   |           | not null |
+ longitude  | character varying(255)   |           | not null |
+ created_at | timestamp with time zone |           |          | now()
+ updated_at | timestamp with time zone |           |          | now()
+ deleted_at | timestamp with time zone |           |          |
+Indexes:
+    "history_pkey" PRIMARY KEY, btree (id)
+Triggers:
+    update_history_update_at BEFORE UPDATE ON history FOR EACH ROW EXECUTE PROCEDURE update_updated_at_column()
 ```
 
 ## GRPC Service
