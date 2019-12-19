@@ -23,7 +23,9 @@ func NewHistory(store database.Store, conn *nats.EncodedConn) *History {
 			err := store.HistoryCreate(h)
 			if err != nil {
 				fmt.Printf("Error in conn.Subscribe(history.create), %v", err)
+				return
 			}
+			fmt.Println("[NATS][HistoryService][History.Create][Subscribe] Created ok")
 		})
 	}()
 
