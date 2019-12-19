@@ -17,7 +17,7 @@ func (us *HistoryStore) HistoryListByUserID(q *history.Query) ([]*history.Histor
 		Select("*").
 		From("history").
 		Where(squirrel.Eq{"user_id": q.UserID}).
-		Where("deleted_at is null AND user")
+		Where("deleted_at is null")
 
 	sql, args, err := query.PlaceholderFormat(squirrel.Dollar).ToSql()
 	if err != nil {

@@ -8,7 +8,7 @@
 #
 # Internal variables
 #
-VERSION=0.0.3
+VERSION=0.0.4
 SVC=tenpo-history-api
 BIN_PATH=$(PWD)/bin
 BIN=$(BIN_PATH)/$(SVC)
