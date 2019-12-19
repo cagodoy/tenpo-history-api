@@ -56,6 +56,6 @@ message HistoryListByUserIdResponse {
 
 `make docker`: build docker.
 
-`docker run -it -p 5020:5020 tenpo-history`: run docker.
+`docker run -it -p 5020:5020 tenpo-history-api`: run docker.
 
-`PORT=<port> POSTGRES_DSN=<postgres_dsn> NATS_HOST=<nats_host> NATS_PORT=<nats_port> ./bin/tenpo-history-api`: run tenpo history service.
+`PORT=<port> POSTGRES_DSN=<postgres_dsn> NATS_HOST=<nats_host> NATS_PORT=<nats_port> ./tenpo-history-api`: run tenpo history service.
